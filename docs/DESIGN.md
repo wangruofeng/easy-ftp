@@ -132,8 +132,7 @@ ftp-server-v2/
 │       ├── server.js           # Express 创建、路由注册
 │       ├── indexPage.js        # 生成「索引页」HTML（ASCII + 信息框 + 列表）
 │       └── format.js           # 日期格式化、文件大小 K/M/G、路径规范化
-├── data/                       # 默认 FTP/HTTP 共用根目录（可 .gitkeep 或示例文件）
-│   └── .gitkeep
+├── data/                       # 默认 FTP/HTTP 共用根目录（.gitignore 忽略内容）
 └── docs/
     └── DESIGN.md               # 本文档
 ```
