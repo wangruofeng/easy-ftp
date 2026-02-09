@@ -1,5 +1,5 @@
 {
-  "name": "ftp-server-v2",
+  "name": "easy-ftp",
   "version": "1.0.1",
   "description": "FTP server with Pieter-style web index (anonymous FTP + HTTP directory listing)",
   "license": "MIT",

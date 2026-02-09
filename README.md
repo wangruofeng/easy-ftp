@@ -1,4 +1,4 @@
-# FTP Server v2
+# Easy FTP
 
 复刻 [Pieter's FTP](https://ftp.pieter.com/) 风格：**真实 FTP 服务 + 同风格 Web 目录索引**，共用同一数据目录。
 
@@ -46,7 +46,7 @@ npm start              # 带 nodemon，改代码自动重启
 ## 目录结构
 
 ```
-ftp-server-v2/
+easy-ftp/
 ├── config.js              # 配置入口
 ├── src/
 │   ├── index.js           # 启动 FTP + HTTP
