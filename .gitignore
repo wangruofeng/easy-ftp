@@ -8,8 +8,6 @@ node_modules/
 
 # Data directory: ignore uploaded/user files, keep placeholder
 data/*
-!data/.gitkeep
-!data/**/.gitkeep
 
 # Logs
 *.log
