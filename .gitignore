@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Local env (keep .env.example)
+.env
+.env.local
+.env.*.local
+
+# Data directory: ignore uploaded/user files, keep placeholder
+data/*
+!data/.gitkeep
+!data/**/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
