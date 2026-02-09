@@ -162,13 +162,13 @@ function renderIndexPage(resolvedDir, urlPath, ftpHost, siteName) {
     <div class="btn-group-right">
       <button type="submit" id="upload-submit-btn" disabled>上传文件</button>
       <button type="button" class="btn-newfile" id="btn-newfile">新建文件</button>
-      <button type="button" class="btn-newdir" id="btn-newdir">新增文件夹</button>
+      <button type="button" class="btn-newdir" id="btn-newdir">新建文件夹</button>
     </div>
   </form>
 </div>
 <div class="modal-overlay" id="newdir-modal">
   <div class="modal-dialog">
-    <h2>新增文件夹</h2>
+    <h2>新建文件夹</h2>
     <form action="/api/newdir" method="post" id="newdir-form">
       <input type="hidden" name="path" value="${escapeHtml(urlPath.replace(/\/$/, ''))}">
       <label for="newdir-name">文件夹名称</label>
