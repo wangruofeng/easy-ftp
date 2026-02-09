@@ -120,9 +120,9 @@ function renderIndexPage(resolvedDir, urlPath, ftpHost, siteName) {
     .row-dir a:hover { text-decoration: underline; }
     .row-file a { color: #111; text-decoration: none; }
     .row-file a:hover { text-decoration: underline; color: #0066b8; }
-    .content-wrap { max-width: 80ch; }
+    .content-wrap { max-width: 65ch; }
     hr { border: none; border-top: 1px solid #ccc; margin: 1em 0; }
-    .upload-box { margin: 1em 0; padding: 0.8em; background: #eee; border: 1px solid #ccc; border-radius: 4px; display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; max-width: 80ch; box-sizing: border-box; }
+    .upload-box { margin: 1em 0; padding: 0.8em; background: #eee; border: 1px solid #ccc; border-radius: 4px; display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; max-width: 65ch; box-sizing: border-box; }
     .upload-box form { display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; margin: 0; width: 100%; }
     .upload-box .btn-group-right { margin-left: auto; display: flex; align-items: center; gap: 1em; }
     .upload-box input[type="file"] { font-family: inherit; }
