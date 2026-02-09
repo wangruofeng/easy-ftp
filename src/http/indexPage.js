@@ -107,12 +107,18 @@ function renderIndexPage(resolvedDir, urlPath, ftpHost, siteName) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
+  <link rel="icon" href="/favicon.ico">
   <style>
     body { font-family: Consolas, "Courier New", monospace; background: #f5f5f5; color: #111; margin: 2em; line-height: 1.4; }
     pre { white-space: pre; margin: 0 0 1em 0; overflow-x: auto; min-width: min(80ch, 100%); }
     h1 { font-size: 1.2em; margin: 1em 0 0.5em 0; }
-    table { border-collapse: collapse; margin: 0.5em 0; }
-    th, td { text-align: left; padding: 0.2em 1em 0.2em 0; vertical-align: top; }
+    table { border-collapse: collapse; margin: 0.5em 0; table-layout: fixed; }
+    th:nth-child(1), td:nth-child(1) { width: auto; max-width: 50%; white-space: nowrap; }
+    th:nth-child(1) a, td:nth-child(1) a { display: inline; max-width: calc(100% - 2em); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
+    th:nth-child(2), td:nth-child(2) { width: 14em; white-space: nowrap; }
+    th:nth-child(3), td:nth-child(3) { width: 8em; }
+    th, td { text-align: left; padding: 0 1em 0 0; vertical-align: top; font-size: 14px; }
+    th:nth-child(2), td:nth-child(2), th:nth-child(3), td:nth-child(3) { text-align: right; padding: 0 0 0 1em; }
     td .icon { display: inline-block; width: 1.2em; text-align: center; margin-right: 0.4em; }
     .icon-dir::before { content: "📁"; }
     .icon-file::before { content: "📄"; }
@@ -218,6 +224,22 @@ function renderIndexPage(resolvedDir, urlPath, ftpHost, siteName) {
     fileInput.addEventListener('change', function() {
       submitBtn.disabled = !this.files || this.files.length === 0;
     });
+  }
+
+  // 文件名中间省略
+  function ellipsisMiddle(text, maxLength) {
+    if (text.length <= maxLength) return text;
+    var half = Math.floor((maxLength - 3) / 2);
+    return text.slice(0, half) + '...' + text.slice(-half);
+  }
+  var nameLinks = document.querySelectorAll('td:nth-child(1) a');
+  for (var i = 0; i < nameLinks.length; i++) {
+    var link = nameLinks[i];
+    var fullName = link.textContent;
+    link.title = fullName;
+    var maxWidth = link.parentElement.offsetWidth - 20;
+    var estimatedChars = Math.floor(maxWidth / 14);
+    link.textContent = ellipsisMiddle(fullName, estimatedChars);
   }
 })();
 </script>
